@@ -9,6 +9,7 @@ import org.launchcode.models.data.JobData;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by LaunchCode
@@ -21,6 +22,14 @@ public class JobForm {
 
     @NotNull
     private int employerId;
+
+    @NotNull
+    private HashMap<Integer, String > employer  = new HashMap<>();
+
+    @NotNull
+    private String coreCompetency;
+
+    private PositionType positionType;
 
     /*
         TODO #3 - Included other fields needed to create a job,
@@ -42,6 +51,9 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
 
     }
 
@@ -92,4 +104,6 @@ public class JobForm {
     public void setPositionTypes(ArrayList<PositionType> positionTypes) {
         this.positionTypes = positionTypes;
     }
+
+
 }
