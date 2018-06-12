@@ -24,15 +24,16 @@ public class JobForm {
     private int employerId;
 
     @NotNull
-    private HashMap<Integer, String > employer  = new HashMap<>();
+    private int locationId;
 
     @NotNull
-    private String coreCompetency;
+    private int positionTypeId;
 
-    private PositionType positionType;
+    @NotNull
+    private int coreCompetencyId;
 
     /*
-        TODO #3 - Included other fields needed to create a job,
+        TODO #3 - Include other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
@@ -105,5 +106,27 @@ public class JobForm {
         this.positionTypes = positionTypes;
     }
 
+    public int getLocationId() {
+        return locationId;
+    }
 
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public int getPositionTypeId() {
+        return positionTypeId;
+    }
+
+    public void setPositionTypeId(int positionTypeId) {
+        this.positionTypeId = positionTypeId;
+    }
+
+    public int getCoreCompetencyId() {
+        return coreCompetencyId;
+    }
+
+    public void setCoreCompetencyId(int coreCompetency) {
+        this.coreCompetencyId = coreCompetency;
+    }
 }
