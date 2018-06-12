@@ -1,5 +1,6 @@
 package org.launchcode.models.forms;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.launchcode.models.CoreCompetency;
 import org.launchcode.models.Employer;
 import org.launchcode.models.Location;
@@ -17,7 +18,8 @@ import java.util.HashMap;
 public class JobForm {
 
     @NotNull
-    @Size(min=1, message = "Name may not be empty")
+    @NotBlank(message = "Name may not be blank.")
+    @Size(min=1, message = "Name may not be empty.")
     private String name;
 
     @NotNull
@@ -31,12 +33,6 @@ public class JobForm {
 
     @NotNull
     private int coreCompetencyId;
-
-    /*
-        TODO #3 - Include other fields needed to create a job,
-        with correct validation attributes and display names.
-        Don't forget to add getters and setters
-     */
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
