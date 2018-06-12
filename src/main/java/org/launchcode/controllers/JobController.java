@@ -53,6 +53,7 @@ public class JobController {
         CoreCompetency coreCompetency = jobData.getCoreCompetencies().findById(jobForm.getCoreCompetencyId());
 
         Job newJob = new Job(jobForm.getName(), employer, location, positionType, coreCompetency);
+        JobData.getInstance().add(newJob);
         model.addAttribute("id", newJob.getId());
 
         return "new-job";
